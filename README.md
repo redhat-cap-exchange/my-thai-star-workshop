@@ -47,9 +47,9 @@ The "Road to cloud-native" workshop is a 1-day event with a series of hands-on-l
 2. Create a new Java workspace
 3. Import code
 4. Finalize the setup
-  - config Git
-  - config Maven
-  - modify POM to use Nexus
+  1. config Git
+  2. config Maven
+  3. modify POM to use Nexus
 
 ## Lab 1 - A first build and first steps in OpenShift
 
