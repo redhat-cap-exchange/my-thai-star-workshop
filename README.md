@@ -55,16 +55,26 @@ The "Road to cloud-native" workshop is a 1-day event with a series of hands-on-l
 
 ### In CodeReady workspace
 
-* Manually build the java code -> mvn install
+* Manually build the java code
+
+```shell
+mvn install
+```
+
 * Launch the java API service
-* Test access to the service -> curl ...
+* Test access to the service
+```shell
+curl http://localhost:8080
+```
+
 * Terminate the running process
 * Access OpenShift from the command line
   - Open a terminal window
   - Login into OpenShift from the CodeReady workspace
   - Create a new project from the comand line
   - oc new-project userXY
-* A first deployment on OpenShift
+
+### A first deployment on OpenShift
   - Open the OpenShift developer console
   - Navigate to the new project
   - Manually create a new Java app
