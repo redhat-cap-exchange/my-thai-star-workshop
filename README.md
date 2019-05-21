@@ -68,26 +68,30 @@ curl http://localhost:8080
 ```
 
 * Terminate the running process
-* Access OpenShift from the command line
-  - Open a terminal window
-  - Login into OpenShift from the CodeReady workspace
-  - Create a new project from the comand line
-  - oc new-project userXY
+ 
+### Access OpenShift from the command line
+* Open a terminal window
+* Login into OpenShift from the CodeReady workspace
+* Create a new project from the comand line
+```shell
+oc new-project userXY
+
+```
 
 ### A first deployment on OpenShift
-  - Open the OpenShift developer console
-  - Navigate to the new project
-  - Manually create a new Java app
-    - Add to project ... Red Hat Java 8
-    - Complete the configuration wizzard
-      - Name of the app
-      - Point to you forked app code
-      - Advanced options: git branch, context dir
+* Open the OpenShift developer console
+* Navigate to the new project
+* Manually create a new Java app
+* Complete the configuration wizzard
+  - Name of the app
+  - Point to you forked app code
+  - Advanced options: git branch, context dir
 * Watch the build process
   - EXPECT AN ERROR !!
-* Introduction to S2i builds
-  - Add missing config variables
-  - Restart the build
+
+### Introduction to S2i builds
+* Add missing config variables
+* Restart the build
 
 ## Lab 2 - Automation of the setup, build & deployment
 
