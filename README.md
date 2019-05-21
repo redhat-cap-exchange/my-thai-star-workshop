@@ -21,9 +21,9 @@ The "Road to cloud-native" workshop is a 1-day event with a series of hands-on-l
 ## Intro to the lab environment
 * Overview CodeReady Workspaces
 * Overview of other tools
-  * Nexus
-  * Gogs
-  * Jenkins
+  - Nexus
+  - Gogs
+  - Jenkins
 
 ## Lab 0
 
