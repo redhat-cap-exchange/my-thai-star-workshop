@@ -71,11 +71,13 @@ curl http://localhost:8080
  
 ### Access OpenShift from the command line
 * Open a terminal window
-* Login into OpenShift from the CodeReady workspace
+* Login into OpenShift from command line
+```shell
+oc login https://<url_of_cluster>
+```
 * Create a new project from the comand line
 ```shell
 oc new-project userXY
-
 ```
 
 ### A first deployment on OpenShift
@@ -87,7 +89,8 @@ oc new-project userXY
   - Point to you forked app code
   - Advanced options: git branch, context dir
 * Watch the build process
-  - EXPECT AN ERROR !!
+
+**EXPECT AN ERROR !!**
 
 ### Introduction to S2i builds
 * Add missing config variables
@@ -120,29 +123,38 @@ oc new-project userXY
   - how to customize the build to reflect the deployment
   - how to serve content
 * Build and deploy the frontend
-* SHOW THE RUNNING APP !
+
+**SHOW THE RUNNING APP !**
 
 ## Lab 4 - CI/CD setup and Gitflow
 
-* Explain & discuss build triggers
-  - Add webhooks to Git
-  - Discuss Gitflow & feature branches etc
-    - Create a branch
-    - Make a code change and commit
-  - Watch the build & deplyment cycle
+### Explain & discuss build triggers
+* Add webhooks to Git
+
+### Discuss Gitflow & feature branches etc
+* Create a branch
+* Make a code change and commit
+* Watch the build & deplyment cycle
 
 ## Lab 5 - Setup of a deployment pipeline
   
-* Setup TEST and PROD projects
+### Setup TEST and PROD projects
+
 * Introduction to the integrated build pipeline & Jenkins
 * Discuss forks, feature branches & pull requests
   - Create a pull request against the upstream repo
   - Merge changes in upstream
-* Trigger CI 
-* Setup CD
+
+### End-to-end CICD
+
+* Setup CI/CD
   - Image sharing
   - Blue / green deployment concept
   - Setup CD pipeline
+* Trigger CI/CD
+  - Merge a pull request
+
+**MONITOR THE PROGRESS**
 
 ## Additional Labs
 
