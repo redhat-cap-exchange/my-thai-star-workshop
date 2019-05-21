@@ -29,7 +29,7 @@ The "Road to cloud-native" workshop is a 1-day event with a series of hands-on-l
   - Gogs
   - Jenkins
 
-## Lab 0
+## Lab 0 - Setup the workspace
 
 ### Introduction to devonfw and the reference app
 
@@ -141,6 +141,16 @@ The "Road to cloud-native" workshop is a 1-day event with a series of hands-on-l
 TBD
 
 ## Workshop setup
-* Deploy an OpenShift cluster using RHPDS
-* Deploy the CodeReady Workspace
-* Deploy CI/CD apps (Gogs, Nexus, Jenkins)
+
+### Deploy an OpenShift cluster using RHPDS
+
+Go to https://rhpds.redhat.com/ and create an OpenShift 4 cluster.
+
+### Deploy the CodeReady Workspaces and other tools
+
+Run the setup script:
+
+```shell
+cd scripts
+./setup.sh <name_of_the_cluster>
+```
