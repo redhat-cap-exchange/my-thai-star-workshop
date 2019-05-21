@@ -131,7 +131,8 @@ oc new-project userXY
 ### Explain & discuss build triggers
 * Add webhooks to Git
 
-### Discuss Gitflow & feature branches etc
+### Discuss Gitflow
+* Explain branching, feature branches etc
 * Create a branch
 * Make a code change and commit
 * Watch the build & deplyment cycle
@@ -155,6 +156,14 @@ oc new-project userXY
   - Merge a pull request
 
 **MONITOR THE PROGRESS**
+
+## Missing parts
+
+* Config Maps, Secrets
+* Monitoring endpoints
+* Logging
+* Storage
+* Using existing containers, e.g. databases
 
 ## Additional Labs
 
