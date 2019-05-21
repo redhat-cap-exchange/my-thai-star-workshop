@@ -2,7 +2,7 @@
 
 The "Road to cloud-native" workshop is a 1-day event with a series of hands-on-labs which are designed to familiarize participants with cloud-native concepts and give them a taste of using OpenShift 4 for building and managing cloud-native applications.
 
-## Outline of the day
+### Outline of the day
 
 * Overview (60min)
 * Intro to the lab environment (30min)
@@ -21,15 +21,14 @@ The "Road to cloud-native" workshop is a 1-day event with a series of hands-on-l
 * Complete “Red Hat OpenShift 3 Foundations”
 * Bring your own laptop
 
-## Intro to the lab environment
-
-* Overview CodeReady Workspaces
-* Overview of other tools
-  - Nexus
-  - Gogs
-  - Jenkins
+# Workshop Content
 
 ## Lab 0 - Setup the workspace
+
+### Introduction to the lab environment
+
+* Overview CodeReady Workspaces
+* Overview of other CI/CD tools
 
 ### Introduction to devonfw and the reference app
 
@@ -42,12 +41,12 @@ The "Road to cloud-native" workshop is a 1-day event with a series of hands-on-l
 * https://github.com/redhat-capgemini-exchange/my-thai-star
 * https://github.com/redhat-capgemini-exchange/my-thai-star-workshop
   
-### Setup your workspace
+### Setup your own development workspace
 
-* Create a fork of the “My Thai Star” reference application code
-* Create a new Java workspace
-* Import code
-* Finalize the setup
+1. Create a fork of the “My Thai Star” reference application code
+2. Create a new Java workspace
+3. Import code
+4. Finalize the setup
   - config Git
   - config Maven
   - modify POM to use Nexus
