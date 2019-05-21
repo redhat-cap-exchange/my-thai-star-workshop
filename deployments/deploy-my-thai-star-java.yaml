@@ -1,0 +1,82 @@
+apiVersion: v1
+kind: List
+items:
+
+- kind: DeploymentConfig
+  apiVersion: 'v1'
+  metadata:
+    labels:
+      app: my-thai-star
+    name: my-thai-star-java
+  spec:
+    replicas: 1
+    
+    selector:
+      app: my-thai-star-java
+      deploymentconfig: my-thai-star-java
+    strategy:
+      resources: {}
+    
+    template:
+      metadata:
+        labels:
+          app: my-thai-star-java
+          deploymentconfig: my-thai-star-java
+      
+      spec:
+        containers:
+          - env:
+            - name: JAVA_APP_JAR
+              value: mythaistar-bootified.war
+
+            image: my-thai-star-java:latest
+            imagePullPolicy: Always
+            name: my-thai-star-java
+            
+            ports:
+            - containerPort: 8443
+              protocol: TCP
+            - containerPort: 8778
+              protocol: TCP
+            - containerPort: 8081
+              protocol: TCP
+            resources: {}
+    
+    test: false
+    
+    triggers:
+    - type: ConfigChange
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - my-thai-star-java
+        from:
+          kind: ImageStreamTag
+          name: my-thai-star-java:latest
+      type: ImageChange
+
+- kind: Service
+  apiVersion: 'v1'
+  metadata:
+    labels:
+      app: my-thai-star-java
+    name: my-thai-star-java
+  spec:
+    ports:
+    - name: 8081-tcp
+      port: 8081
+      protocol: TCP
+      targetPort: 8081
+    - name: 8443-tcp
+      port: 8443
+      protocol: TCP
+      targetPort: 8443
+    - name: 8778-tcp
+      port: 8778
+      protocol: TCP
+      targetPort: 8778
+    selector:
+      app: my-thai-star-java
+      deploymentconfig: my-thai-star-java
+  status:
+    loadBalancer: {}

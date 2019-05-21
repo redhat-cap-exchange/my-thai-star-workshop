@@ -1,0 +1,62 @@
+apiVersion: v1
+kind: List
+items:
+
+- kind: ImageStream
+  apiVersion: 'v1'
+  metadata:
+    annotations:
+      description: My-thai-star nodejs image
+      tags: java, my-thai-star
+    labels:
+      app: my-thai-star-nodejs
+    name: 'my-thai-star-nodejs'
+
+- kind: BuildConfig
+  apiVersion: 'v1'
+  metadata:
+    labels:
+      app: my-thai-star-nodejs
+    name: 'my-thai-star-nodejs' 
+  spec:
+    
+    runPolicy: 'Serial' 
+    
+    triggers:
+    - github:
+        secret: my-thai-star
+      type: GitHub
+    - generic:
+        secret: my-thai-star
+      type: Generic
+    - type: ConfigChange
+    - imageChange: {}
+      type: ImageChange
+      
+    source:
+      contextDir: node
+      git:
+        uri: https://github.com/devonfw/my-thai-star
+        ref: develop
+      type: Git
+    
+    strategy:
+      sourceStrategy:
+        env:
+          - name: MAVEN_MIRROR_URL
+            value: http://nexus.cicd.svc:8081/nexus/content/groups/public/
+          #- name: MAVEN_S2I_ARTIFACT_DIRS
+          #  value: server/target
+          #- name: S2I_SOURCE_DEPLOYMENTS_FILTER
+          #  value: '*.war'
+
+        from:
+          kind: ImageStreamTag
+          name: 'nodejs:8'
+          namespace: openshift
+      type: Source
+        
+    output:
+      to:
+        kind: ImageStreamTag
+        name: 'my-thai-star-nodejs:latest'

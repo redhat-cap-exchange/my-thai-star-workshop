@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: List
+items:
+
+- kind: DeploymentConfig
+  apiVersion: 'v1'
+  metadata:
+    labels:
+      app: my-thai-star-nodejs
+    name: my-thai-star-nodejs
+  spec:
+    replicas: 1
+    
+    selector:
+      app: my-thai-star-nodejs
+      deploymentconfig: my-thai-star-nodejs
+    strategy:
+      resources: {}
+    
+    template:
+      metadata:
+        labels:
+          app: my-thai-star-nodejs
+          deploymentconfig: my-thai-star-nodejs
+      
+      spec:
+        containers:
+          - env:
+            #- name: JAVA_APP_JAR
+            #  value: mtsj-server-bootified.war
+
+            image: my-thai-star-nodejs:latest
+            imagePullPolicy: Always
+            name: my-thai-star-nodejs
+            
+            ports:
+            - containerPort: 8081
+              protocol: TCP
+            resources: {}
+    
+    test: false
+    
+    triggers:
+    - type: ConfigChange
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - my-thai-star-nodejs
+        from:
+          kind: ImageStreamTag
+          name: my-thai-star-nodejs:latest
+      type: ImageChange
+
+- kind: Service
+  apiVersion: 'v1'
+  metadata:
+    labels:
+      app: my-thai-star-nodejs
+    name: my-thai-star-nodejs
+  spec:
+    ports:
+    - name: 8081-tcp
+      port: 8081
+      protocol: TCP
+      targetPort: 8081
+    selector:
+      app: my-thai-star-nodejs
+      deploymentconfig: my-thai-star-nodejs
+  status:
+    loadBalancer: {}

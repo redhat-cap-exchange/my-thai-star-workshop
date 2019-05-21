@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "---> Starting the server"
+serve -l 8080 dist
+
+#while true
+#do
+#	echo "..."
+#	sleep 10
+#done
+
+

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Prevent running assemble in builders different than official STI image.
+# The official nodejs:8-onbuild already run npm install and use different
+# application folder.
+[ -d "/usr/src/app" ] && exit 0
+
+set -e
+
+echo "---> Installing application source ..."
+mv /tmp/src/* ./
+
+echo "---> Patching appication source ..."
+sed -i src/app/core/config/config.ts -e "s|http://localhost:8081|$API_ENDPOINT|"
+
+echo "---> Installing all dependencies"
+npm i -g yarn
+yarn
+
+echo "---> Installing add-ons ..."
+yarn global add serve
+
+
+echo "---> Building in production mode"
+yarn build --configuration=production
+
+# Fix source directory permissions
+fix-permissions ./

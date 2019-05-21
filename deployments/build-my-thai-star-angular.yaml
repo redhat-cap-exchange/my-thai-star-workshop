@@ -1,0 +1,60 @@
+apiVersion: v1
+kind: List
+items:
+
+- kind: ImageStream
+  apiVersion: 'v1'
+  metadata:
+    annotations:
+      description: My-thai-star angular image
+      tags: javascript, my-thai-star
+    labels:
+      app: my-thai-star-angular
+    name: my-thai-star-angular
+
+- kind: BuildConfig
+  apiVersion: 'v1'
+  metadata:
+    labels:
+      app: my-thai-star-angular
+    name: my-thai-star-angular
+  spec:
+    
+    runPolicy: 'Serial' 
+    
+    triggers:
+    - github:
+        secret: my-thai-star
+      type: GitHub
+    - generic:
+        secret: my-thai-star
+      type: Generic
+    - type: ConfigChange
+    - imageChange: {}
+      type: ImageChange
+      
+    source:
+      contextDir: angular
+      git:
+        #uri: https://github.com/redhat-capgemini-exchange/my-thai-star.git
+        #ref: develop
+        uri: http://gogs-cicd.apps.devonfw-0a2e.openshiftworkshop.com/user1/my-thai-star.git
+        ref: develop
+      type: Git
+    
+    strategy:
+      sourceStrategy:
+        env:
+          - name: API_ENDPOINT
+            value: 'http://api-my-thai-star-user1.apps.devonfw-0a2e.openshiftworkshop.com'
+
+        from:
+          kind: ImageStreamTag
+          name: 'nodejs:8'
+          namespace: openshift
+      type: Source
+        
+    output:
+      to:
+        kind: ImageStreamTag
+        name: 'my-thai-star-angular:latest'
