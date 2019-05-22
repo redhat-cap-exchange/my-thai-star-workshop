@@ -172,7 +172,18 @@ oc new-project userXY
 * Build a custom S2I container
 
 ## Links and resources
-TBD
+
+#### OpenShift Console
+https://master.$CLUSTER.openshiftworkshop.com
+
+#### CodeReady Workspace
+http://codeready-workspaces.apps.$CLUSTER.openshiftworkshop.com
+
+#### Gogs
+http://gogs-workspaces.apps.$CLUSTER.openshiftworkshop.com
+
+#### Nexus
+http://nexus-workspaces.apps.$CLUSTER.openshiftworkshop.com
 
 ## Workshop setup
 
