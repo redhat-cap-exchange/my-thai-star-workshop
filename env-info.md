@@ -1,4 +1,4 @@
-## Appendix: Environment Info
+## Appendix A: Environment Info
 
 You find all urls, hostnames, usernames and passwords that are needed during the 
 labs in this page. Note that the urls are also embedded inside each lab instructions.

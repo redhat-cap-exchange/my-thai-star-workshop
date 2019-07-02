@@ -14,3 +14,4 @@ modules:
   activate:
   - getting-started
   - env-info
+  - workshop-setup

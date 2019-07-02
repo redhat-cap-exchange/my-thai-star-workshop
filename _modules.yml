@@ -5,4 +5,6 @@ modules:
   getting-started:
     name: Getting Started
   env-info:
-    name: "Appendix: Lab ENV Info"
+    name: "Appendix A: Lab ENV Info"
+  workshop-setup:
+    name: "Appendix B: Prepare the OpenShift Cluster"
