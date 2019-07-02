@@ -4,3 +4,5 @@ config:
 modules:
   getting-started:
     name: Getting Started
+  env-info:
+    name: "Appendix: Lab ENV Info"
