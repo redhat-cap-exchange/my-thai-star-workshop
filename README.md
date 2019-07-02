@@ -43,10 +43,11 @@ The "Road to cloud-native" workshop is a 1-day event with a series of hands-on-l
   
 ### Setup your own development workspace
 
-1. Create a fork of the “My Thai Star” reference application code
-2. Create a new Java workspace
-3. Import code
-4. Finalize the setup
+1. Create a user in Gogs
+2. Create a fork of the “My Thai Star” reference application code
+3. Create a new Java workspace
+4. Import code
+5. Finalize the setup
     1. config Git
     2. config Maven
     3. modify POM to use Nexus
@@ -184,6 +185,10 @@ http://gogs-workspaces.apps.$CLUSTER.openshiftworkshop.com
 
 #### Nexus
 http://nexus-workspaces.apps.$CLUSTER.openshiftworkshop.com
+http://nexus-workspaces.apps.$CLUSTER.openshiftworkshop.com/nexus/#welcome
+
+#### Devonfw on GitHub
+https://github.com/devonfw/my-thai-star
 
 ## Workshop setup
 
@@ -201,3 +206,9 @@ Run the setup script:
 cd scripts
 ./setup.sh <name_of_the_cluster> <namespace>
 ```
+
+### Prepare Git
+
+* Create a new organization 'devonfw'
+* Import the upstream 'My Thai Star' reference app
+* Import the upstream workshop project

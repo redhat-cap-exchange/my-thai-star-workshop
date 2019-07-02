@@ -30,7 +30,7 @@ oc rollout resume dc/nexus -n $WORKSPACE
 
 ## Gogs
 #oc new-app -f http://bit.ly/openshift-gogs-persistent-template --param APPLICATION_NAME=gogs --param HOSTNAME=gogs-$WORKSPACE.apps.$CLUSTER.$DOMAIN_NAME --param GOGS_VOLUME_CAPACITY=10Gi --param DB_VOLUME_CAPACITY=10Gi --param=SKIP_TLS_VERIFY=true -n $WORKSPACE
-oc new-app -f gogs.yaml --param APPLICATION_NAME=gogs --param HOSTNAME=gogs-$WORKSPACE.apps.$CLUSTER.$DOMAIN_NAME --param GOGS_VOLUME_CAPACITY=10Gi --param DB_VOLUME_CAPACITY=10Gi --param=SKIP_TLS_VERIFY=true -n $WORKSPACE
+oc new-app -f gogs.yaml --param APPLICATION_NAME=gogs --param HOSTNAME=gogs-$WORKSPACE.apps.cluster-$CLUSTER.$CLUSTER.$DOMAIN_NAME --param GOGS_VOLUME_CAPACITY=10Gi --param DB_VOLUME_CAPACITY=10Gi --param=SKIP_TLS_VERIFY=true -n $WORKSPACE
 
 # Jenkins
 #oc new-app jenkins-persistent --param ENABLE_OAUTH=true --param MEMORY_LIMIT=2Gi --param VOLUME_CAPACITY=4Gi -n $WORKSPACE

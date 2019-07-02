@@ -13,6 +13,9 @@ mv /tmp/src/* ./
 echo "---> Patching appication source ..."
 sed -i src/app/core/config/config.ts -e "s|http://localhost:8081|$API_ENDPOINT|"
 
+echo "---> Configuring npm ..."
+npm config set registry http://nexus.workspaces.svc:8081/nexus/content/repositories/npm/
+
 echo "---> Installing all dependencies"
 npm i -g yarn
 yarn

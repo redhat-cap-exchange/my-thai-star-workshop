@@ -1,0 +1,9 @@
+id: "cloudnative"
+name: "OpenShift Cloud-Native Workshop"
+
+content:
+  url: https://github.com/redhat-capgemini-exchange/my-thai-star-workshop
+
+modules:
+  activate:
+  - getting-started
