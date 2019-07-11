@@ -1,15 +1,25 @@
 ## Lab 1 - A first build and first steps in OpenShift
 
+Config java project and build it in CodeReady.
+
 ### In CodeReady workspace
 
-* Manually build the java code
+* Project - Show/Hide hidden files
+
+#### Config Maven
+
+* Add snippets/pom.xml to java/mtsj/pom.xml
+* Copy snippets/settings.xml to ~/.m2/settings.xml
+
+#### Build
 
 ```shell
-mvn install
+mvn install -DskipTests=true
 ```
 
 * Launch the java API service
 * Test access to the service
+
 ```shell
 curl http://localhost:8080
 ```

@@ -13,7 +13,7 @@ labs in this page. Note that the urls are also embedded inside each lab instruct
 
 **NEXUS MAVEN REPOSITORY**
 
-{{ NEXUS_URL }}
+{{ NEXUS_URL }}/nexus/content/groups/public/
 
 **ECLIPSE CHE IDE**
 

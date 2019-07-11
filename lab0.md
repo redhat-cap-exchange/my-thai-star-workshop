@@ -1,9 +1,8 @@
-## Lab 0 - Setup the workspace
+## Setup the workspace
 
 ### Introduction to the lab environment
 
 * Overview CodeReady Workspaces
-* Overview of other CI/CD tools
 
 ### Introduction to devonfw and the reference app
 
@@ -18,12 +17,9 @@
   
 ### Setup your own development workspace
 
-1. Create a user in Gogs
-2. Create a fork of the “My Thai Star” reference application code
-3. Create a new Java workspace
-4. Import code
-5. Finalize the setup
-    1. config Git
-    2. config Maven
-    3. modify POM to use Nexus
-    
+1. Create a new workspace
+- Add https://github.com/redhat-capgemini-exchange/my-thai-star
+
+2. Add workshop assets
+- Import project -> Git -> URL: https://github.com/redhat-capgemini-exchange/my-thai-star-workshop
+- Project Configuration: blank

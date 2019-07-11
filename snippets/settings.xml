@@ -20,7 +20,7 @@
     <mirror>
       <id>central</id>
       <name>central</name>
-      <url>http://nexus.cicd.svc:8081/nexus/content/groups/public/</url>
+      <url>http://nexus.workshop.svc:8081/nexus/content/groups/public/</url>
       <mirrorOf>*</mirrorOf>
     </mirror>
   </mirrors>

@@ -1,10 +1,19 @@
+<!-- part 1 -->
+<repositories>
+  <repository>
+    <id>maven-group</id>
+    <url>http://nexus.workshop.svc:8081/nexus/content/groups/public/</url>
+  </repository>
+</repositories>
+
+<!-- part 2 -->
 <distributionManagement>
-    <snapshotRepository>
-      <id>nexus-snapshots</id>
-      <url>http://nexus.cicd.svc:8081/nexus/content/repositories/snapshots/</url>
-    </snapshotRepository>
-    <repository>
-      <id>nexus-releases</id>
-      <url>http://nexus.cicd.svc:8081/nexus/content/repositories/releases/</url>
-    </repository>
-  </distributionManagement>
+  <snapshotRepository>
+    <id>nexus-snapshots</id>
+    <url>http://nexus.workshop.svc:8081/nexus/content/repositories/snapshots/</url>
+  </snapshotRepository>
+  <repository>
+    <id>nexus-releases</id>
+    <url>http://nexus.workshop.svc:8081/nexus/content/repositories/releases/</url>
+  </repository>
+</distributionManagement>

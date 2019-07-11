@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: List
+items:
+
+- kind: BuildConfig
+  apiVersion: 'v1'
+  metadata:
+    name: 'workshopper-image' 
+  spec:
+    
+    runPolicy: 'Serial' 
+    
+    triggers: 
+      - type: 'GitHub'
+        github:
+          secret: 'base'
+      - type: 'Generic'
+        generic:
+          secret: 'base'
+      - type: 'ImageChange'
+    
+    source: 
+      git:
+        uri: 'https://github.com/redhat-capgemini-exchange/workshopper.git'
+        ref: 'master'
+      #contextDir: 'base'
+    
+    strategy:
+      type: Docker
+      dockerStrategy:
+        dockerfilePath: Dockerfile
+        forcePull: true
+    
+    output:
+      to:
+        kind: ImageStreamTag
+        name: 'workshopper-image:latest'
+
+- kind: ImageStream
+  apiVersion: 'v1'
+  metadata:
+    annotations:
+      description: Base image for everything
+      tags: workshopper
+    name: 'workshopper-image'
