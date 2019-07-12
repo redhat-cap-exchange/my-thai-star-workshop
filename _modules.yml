@@ -2,9 +2,9 @@ config:
   renderer: markdown
 
 modules:
-  getting-started:
-    name: Getting Started
-  lab0:
+  introduction:
+    name: Introduction
+  setup:
     name: Setup the workspace
   lab1:
     name: A first build and first steps in OpenShift

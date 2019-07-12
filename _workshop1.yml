@@ -14,8 +14,8 @@ vars:
 
 modules:
   activate:
-  - getting-started
-  - lab0
+  - introduction
+  - setup
   - lab1
   - lab2
   - lab3
