@@ -4,7 +4,7 @@ Instructions how to prepare the cluster for the workshop ...
 
 ### Setup the workshop environment
 
-```
+```bash
 
 export WORKSPACE=workshop
 
