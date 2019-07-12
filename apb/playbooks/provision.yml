@@ -8,10 +8,10 @@
     openshift_token:
     openshift_master_url: 
     openshift_user_password: openshift
-    git_repository_lab_path: openshift-labs/cloud-native-labs
-    git_repository_lab_reference: ocp-3.11
-    git_repository_guide_path: openshift-labs/cloud-native-guides
-    git_repository_guide_reference: ocp-3.11
+    git_repository_lab_path: redhat-capgemini-exchange/my-thai-star-workshop
+    git_repository_lab_reference: master
+    git_repository_guide_path: redhat-capgemini-exchange/my-thai-star-guides
+    git_repository_guide_reference: master
     git_repository_guide_context:
     guide_name: codeready
     gogs_dev_user: developer
