@@ -26,6 +26,10 @@ items:
       spec:
         containers:
           - env:
+            - name: WORKSHOP_NAMESPACE
+              value: 'workshop'
+            - name: CLUSTER_ID
+              value: 'foo'
             - name: WORKSHOPS_URLS
               value: 'https://raw.githubusercontent.com/redhat-capgemini-exchange/my-thai-star-workshop/master/_workshop1.yml'
 
