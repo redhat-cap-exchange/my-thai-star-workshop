@@ -2,9 +2,9 @@
 
 Instructions how to prepare the cluster for the workshop ...
 
-### Setup
+### Setup the workshop environment
 
-```bash
+```
 
 export WORKSPACE=workshop
 
@@ -28,4 +28,19 @@ oc set probe dc/nexus --readiness --failure-threshold 3 --initial-delay-seconds 
 oc set volume dc/nexus --add --name 'nexus-volume-1' --type 'pvc' --mount-path '/sonatype-work/' --claim-name 'nexus-data' --claim-size '10G' --overwrite
 oc rollout resume dc/nexus -n $WORKSPACE
 
+```
+
+You can run script `scripts/setup.sh` to perform the above steps.
+
+### Setup Red Hat CodeReady Workspaces
+
+#### Prerequisites
+
+1. Login with a `cluster-admin` role
+2. Change to directory scripts/codeready
+
+Now runt he following script:
+
+```
+./deploy.sh --deploy
 ```
