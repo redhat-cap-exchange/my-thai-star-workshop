@@ -20,7 +20,7 @@
     <mirror>
       <id>central</id>
       <name>central</name>
-      <url>http://nexus.workshop.svc:8081/nexus/content/groups/public/</url>
+      <url>http://nexus.roadtocloudnative.svc:8081/repository/maven-public/</url>
       <mirrorOf>*</mirrorOf>
     </mirror>
   </mirrors>

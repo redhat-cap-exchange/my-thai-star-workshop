@@ -2,7 +2,7 @@
 <repositories>
   <repository>
     <id>maven-group</id>
-    <url>http://nexus.workshop.svc:8081/nexus/content/groups/public/</url>
+    <url>http://nexus.roadtocloudnative.svc.cluster.local:8081/nexus/content/groups/public/</url>
   </repository>
 </repositories>
 
@@ -10,10 +10,10 @@
 <distributionManagement>
   <snapshotRepository>
     <id>nexus-snapshots</id>
-    <url>http://nexus.workshop.svc:8081/nexus/content/repositories/snapshots/</url>
+    <url>http://nexus.roadtocloudnative.svc:8081/repository/maven-snapshots/</url>
   </snapshotRepository>
   <repository>
     <id>nexus-releases</id>
-    <url>http://nexus.workshop.svc:8081/nexus/content/repositories/releases/</url>
+    <url>http://nexus.roadtocloudnative.svc:8081/repository/maven-releases/</url>
   </repository>
 </distributionManagement>
