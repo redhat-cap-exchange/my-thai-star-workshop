@@ -35,11 +35,13 @@ Switch to the OpenShift web console at `$OPENSHIFT_CONSOLE_URL` and navigate to 
 ### Build the app in OpenShift
 
 1. Navigate to the new project
-2. Manually create a new Java app: Browse Catalog - Red Hat OpenJDK8
-3. Complete the configuration wizzard
+2. Manually create a new Java app: `Browse Catalog - Red Hat OpenJDK8`
+3. Complete the configuration wizzard:
   - Name of the app
-  - Point to you app code
-  - Advanced options: git branch, context dir
+  - Point to the repo: [https://github.com/devonfw/my-thai-star.git](https://github.com/devonfw/my-thai-star.git)
+  - Advanced options:
+    - Branch: `develop`
+    - Context: `java/mtsj`
 
 Watch the build & deploy process ...
 

@@ -1,4 +1,4 @@
-# Lab 1 - A first build and first steps in OpenShift
+# Lab 1 - A first build
 
 ### Prepare Maven
 
