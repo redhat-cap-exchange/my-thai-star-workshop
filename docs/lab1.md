@@ -70,23 +70,25 @@ In the terminal window, in order to login, `issue the following command` and log
   $ oc login $OPENSHIFT_CONSOLE_URL
 ```
 
-Now create a *project* in OpenShift:
+Now create a *project* in OpenShift.
+
+**NOTE:**
+Project share a global namespace on the cluster, i.e. project names must be unique. Therefor append your user's number to the project name!
+
 
 ```bash
 oc new-project userXY
 ```
 
+where `XY` is your user's number.
+
 Switch to the OpenShift web console at `$OPENSHIFT_CONSOLE_URL` and navigate to the new project.
 
+### Build the app in OpenShift
 
-
-
-
-### A first deployment on OpenShift
-* Open the OpenShift developer console
-* Navigate to the new project
-* Manually create a new Java app
-* Complete the configuration wizzard
+1. Navigate to the new project
+2. Manually create a new Java app
+3. Complete the configuration wizzard
   - Name of the app
   - Point to you forked app code
   - Advanced options: git branch, context dir
