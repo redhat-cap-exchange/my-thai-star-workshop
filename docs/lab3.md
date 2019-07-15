@@ -26,9 +26,9 @@ In the workspace, open template `templates/build-mythaistar` and search for the 
 
 ![Lab3](images/lab3-git.png)
 
-Replace 'uri:' with `$GOGS_REPO_URL`
+Replace `uri:` with `$GOGS_REPO_URL`
 
-In the terminal window, switch to the `my-thai-star-workshop` directory:
+Next, switch to the `my-thai-star-workshop` directory:
 
 ```bash
 cd /projects/my-thai-star-workshop/
@@ -37,7 +37,7 @@ cd /projects/my-thai-star-workshop/
 Upload the Build-template using the CLI:
 
 ```bash
-oc create -f templates/build-mythaistar.java
+oc create -f templates/build-mythaistar-java.yaml
 ```
 
 Verify that the build is running.
