@@ -33,6 +33,16 @@ In the Project Explorer pane, `click on 'Import Project...'` and enter the follo
 
 ![CodeReady Workspaces - Workspace](images/codeready-import-save.png)
 
+### Importing the workshop assets
+
+You will need certain assets (e.g. code snippets) later in the workshop. Import the repository following the same steps as above into your workspace.
+
+In the workspace, `click on 'Workspace - Import Project...'` and enter the following:
+
+  * Type: **GIT**
+  * URL: **https://github.com/redhat-capgemini-exchange/my-thai-star-workshop.git**
+  * Name: **my-thai-star-workshop**
+
 
 ### Terminal Window of CodeReady Workspaces
 
