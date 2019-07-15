@@ -1,0 +1,138 @@
+- name: road-to-cloud-native-workshop-apb playbook to provision the application
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  vars:
+    openshift_user: 
+    openshift_password: 
+    openshift_token:
+    openshift_master_url: 
+    gogs_dev_user: developer
+    gogs_pwd: openshift
+    infrasvcs_adm_user: adminuser
+    infrasvcs_adm_pwd: adminpwd
+    user_count: 10
+
+  roles:
+  - role: ansible.kubernetes-modules
+    install_python_requirements: no
+  - role: ansibleplaybookbundle.asb-modules
+
+  tasks:    
+  - name: login as super user with token
+    shell: "oc login --token={{ openshift_token }} --insecure-skip-tls-verify=true"
+    when:
+      - openshift_token is defined
+      - openshift_token is not none
+      - openshift_token|trim() != ""
+    tags: always
+
+  - name: login as super user with pwd
+    shell: "oc login -u {{ openshift_user }} -p {{ openshift_password }} --insecure-skip-tls-verify=true"
+    when: >
+      openshift_token is not defined or
+      openshift_token is none or
+      openshift_token|trim() == ""
+    tags: always
+
+  - name: extract app route suffix from openshift-console
+    block:
+      - shell: "oc get route console -n openshift-console -o 'jsonpath={.spec.host}'"
+        register: console_route
+      - set_fact:
+          apps_hostname_suffix: "{{ console_route.stdout |regex_replace('^console\\.(.*)$', '\\1') }}"
+    tags: always
+
+  - name: delete project quota
+    shell: "oc delete limitrange --all -n {{ namespace }}"
+    ignore_errors: true
+    tags: always
+
+  - import_role:
+      name: openshift_sonatype_nexus
+    vars:
+      project_name: "{{ namespace }}"
+      nexus_image_version: 3.12.1
+      nexus_max_memory: 6Gi
+    tags: nexus
+
+  - import_role:
+      name: openshift_gogs
+    vars:
+      project_name: "{{ namespace }}"
+      gogs_route: "gogs-{{ namespace }}.{{ apps_hostname_suffix }}"
+      gogs_image_version: 0.11.34
+      gogs_admin_user: "{{ infrasvcs_adm_user }}"
+      gogs_admin_password: "{{ infrasvcs_adm_pwd }}"
+      gogs_user: "{{ gogs_dev_user }}"
+      gogs_password: "{{ gogs_pwd }}"
+    tags: gogs
+
+  # install openjdk imagestream
+  - name: get openjdk image stream
+    shell: "oc get is java -n openshift"
+    register: java_imagestream_result
+    ignore_errors: true
+    tags: jdk
+
+  - name: install java image stream
+    shell: "oc apply -n openshift -f https://raw.githubusercontent.com/jboss-openshift/application-templates/master/openjdk/openjdk18-image-stream.json"
+    when: java_imagestream_result is failed
+    tags: jdk
+
+  # update jenkins templates
+  - import_role:
+      name: openshift_jenkins
+    vars:
+      update_jenkins_templates: true
+      jenkins_template_disable_admin_monitors: true
+      deploy_jenkins: false
+      jenkins_max_cpu: 2
+      jenkins_max_mem: 2Gi
+
+  # install CodeReady Workspaces
+  - name: Deploy CodeReady Workspaces
+    command: "{{ playbook_dir }}/codeready-workspaces-operator-installer/deploy.sh --deploy --oauth --project={{ namespace }}" 
+    register: cmd_result
+    changed_when: true
+    
+  - name: get CodeReady Workspaces URL
+    command: "oc get routes codeready --template={% raw %}'{{ .spec.host }}'{% endraw %} -n {{ namespace }}"
+    register: cmd_result
+    changed_when: true
+
+  - name: init 'codeready_url' variable
+    set_fact:
+      codeready_url: "{{ cmd_result.stdout }}"
+
+  - name: get RHSSO URL
+    command: "oc get routes keycloak --template={% raw %}'{{ .spec.host }}'{% endraw %} -n {{ namespace }}"
+    register: cmd_result
+    changed_when: true
+
+  - name: init 'rhsso_url' variable
+    set_fact:
+      rhsso_url: "{{ cmd_result.stdout }}"
+
+  - name: wait for CodeReady Workspaces to be running
+    uri:
+      url: "http://{{ codeready_url }}/api/system/state"
+      status_code: 200
+    register: result
+    until: result.status == 200
+    retries: 60
+    delay: 30
+
+  # Import custom stacks
+  - name: Create Cloud-Native stack
+    command: >
+      oc import-image che-cloud-native:latest
+       -n openshift
+       --from=quay.io/mcouliba/che-cloud-native --confirm
+       
+  - name: Import custom stacks
+    include: "{{ playbook_dir }}/tasks/add_custom_stack.yml"
+    vars:
+      stack_template: "{{ item }}"
+    with_fileglob:
+    - "{{ playbook_dir }}/templates/stacks/*-stack.json.j2"
