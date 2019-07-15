@@ -1,4 +1,4 @@
-# Setup CodeReady Workspaces
+# Setup the development environment
 
 ![CodeReady](images/codeready.png)
 
@@ -31,3 +31,25 @@ Finally, `enter your account information` and `click on 'Submit'`
 ![CodeReady Workspaces - Log in](images/codeready-account-information.png)
 
 Once logged into CodeReady Workspaces, you can now create your workspace based on the *Java 1.8 Stack*.
+
+### Create your own codebase
+
+Go to *$GOGS_URL*, then click *'Sign In'*.
+
+Log in as `$OPENSHIFT_USER @ $OPENSHIFT_PASSWORD`
+
+Navigate to `devonfw` organization.
+
+![Gogs - devonfw](images/setup-gogs1.png)
+
+Select the `devonfw / my-thai-star` repository and *fork* it.
+
+![Gogs - devonfw](images/setup-gogs2.png)
+
+![Gogs - devonfw](images/setup-gogs3.png)
+
+To switch the default branch to `develop`, click `Settings` and then navigate to `Branches`.
+
+![Gogs - devonfw](images/setup-gogs4.png)
+
+![Gogs - devonfw](images/setup-gogs5.png)

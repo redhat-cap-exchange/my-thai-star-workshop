@@ -1,4 +1,4 @@
-## Lab 3 - Builds and Deployments
+## Lab 3 - Builds and Deployments using Templates
 
 ### Create a new project
 
