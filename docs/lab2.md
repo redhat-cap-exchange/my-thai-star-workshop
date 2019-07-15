@@ -1,5 +1,11 @@
 ## Lab 2 - Automation of the setup, build & deployment
 
+### Introduction to S2i builds
+* Add missing config variables
+* Restart the build
+
+### S2I
+
 * Import ‘redhat-capgemini-exchange/my-thai-star-workshop’ into the CodeReady workspace
 * Create a new project: oc new-project my-thai-star-userXY
 * Introduce templates

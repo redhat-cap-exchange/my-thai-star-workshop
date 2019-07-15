@@ -87,15 +87,12 @@ Switch to the OpenShift web console at `$OPENSHIFT_CONSOLE_URL` and navigate to 
 ### Build the app in OpenShift
 
 1. Navigate to the new project
-2. Manually create a new Java app
+2. Manually create a new Java app: Browse Catalog - Red Hat OpenJDK8
 3. Complete the configuration wizzard
   - Name of the app
-  - Point to you forked app code
+  - Point to you app code
   - Advanced options: git branch, context dir
-* Watch the build process
+
+Watch the build process ...
 
 **EXPECT AN ERROR !!**
-
-### Introduction to S2i builds
-* Add missing config variables
-* Restart the build
