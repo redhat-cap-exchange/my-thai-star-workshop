@@ -1,23 +1,36 @@
-## Lab 1 - A first build and first steps in OpenShift
+# Lab 1 - A first build and first steps in OpenShift
 
-Config java project and build it in CodeReady.
+### Prepare Maven
 
-### In CodeReady workspace
+Open `my-thai-star/java/mtsj/pom.xml`. Add `snippets/pom.xm` to the end of project's pom.xml file. 
 
-* Project - Show/Hide hidden files
+In the terminal window:
 
-#### Config Maven
+```bash
+cd
+cd .m2
+vi settings.xml
+```
 
-* Add snippets/pom.xml to java/mtsj/pom.xml
-* Copy snippets/settings.xml to ~/.m2/settings.xml
+Insert `snippets/settings.xml` and save the new file (ESC :wq). Switch back to the project location:
 
-#### Build
+```bash
+cd /projects/my-thai-star
+```
+
+Switch to the java component`s root location:
+
+```bash
+cd java/mtsj
+```
+
+### Build
 
 ```shell
 mvn install -DskipTests=true
 ```
 
-#### Deploy the artifacts
+### Deploy the artifacts
 
 ```shell
 mvn deploy -DskipTests=true
@@ -31,7 +44,18 @@ curl http://localhost:8080
 ```
 
 * Terminate the running process
- 
+
+
+
+
+
+
+
+
+
+
+
+
 ### Access OpenShift from the command line
 * Open a terminal window
 * Login into OpenShift from command line
