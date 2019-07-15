@@ -51,48 +51,36 @@ You can now wath the Spring Boot application spin up.
 The easiest way to terminate the app is to kill it's process. Open a `open a second terminal` by clicking on the '+' next the current terminal window:
 
 ```bash
-ps -u
+ps -u | grep java
 ````
 
 ![Lab1](images/lab1-terminal.png)
 
-Copy the process ID and kill it:
+Copy the PID and kill the process:
 
 ```bash
-kill -9 <process ID>
+kill -9 <PID>
 ```
 
+### Create a new project in OpenShift
 
-* Launch the java API service
-* Test access to the service
+In the terminal window, in order to login, `issue the following command` and log in as `$OPENSHIFT_USER @ $OPENSHIFT_PASSWORD`
 
-```shell
-curl http://localhost:8080
+```bash
+  $ oc login $OPENSHIFT_CONSOLE_URL
 ```
 
-* Terminate the running process
+Now create a *project* in OpenShift:
 
-
-
-
-
-
-
-
-
-
-
-
-### Access OpenShift from the command line
-* Open a terminal window
-* Login into OpenShift from command line
-```shell
-oc login https://<url_of_cluster>
-```
-* Create a new project from the comand line
-```shell
+```bash
 oc new-project userXY
 ```
+
+Switch to the OpenShift web console at `$OPENSHIFT_CONSOLE_URL` and navigate to the new project.
+
+
+
+
 
 ### A first deployment on OpenShift
 * Open the OpenShift developer console
