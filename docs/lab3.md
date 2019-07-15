@@ -23,19 +23,22 @@ If you have a JSON or YAML file that defines a template, you can upload the temp
 Upload the Build-template using the CLI:
 
 ```bash
+oc create -f https://raw.githubusercontent.com/redhat-capgemini-exchange/my-thai-star-workshop/master/templates/build-mythaistar-java.yaml
+```
+
+or
+
+```bash
 oc create -f templates/build-mythaistar.java
 ```
 
+Verify that the build is running.
 
-#### Deployment template
+Upload the Deployment-template using the CLI:
 
-* Introduce templates
-  - build
-  - deploy
-  - others (service, routes, storage etc)
-* Add build & deployment templates to the code base
-  - customize Git references etc
-* Deploy build templates
-  - start build
-* Create a deployment
-* Add a route
+```bash
+oc create -f https://raw.githubusercontent.com/redhat-capgemini-exchange/my-thai-star-workshop/master/templates/deploy-mythaistar-java.yaml
+```
+
+Once the build is finished, the app will be automatically deployed.
+
