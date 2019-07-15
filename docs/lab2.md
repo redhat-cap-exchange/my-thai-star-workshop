@@ -10,7 +10,11 @@ Source-to-Image (S2I) is a tool for building reproducible, Docker-formatted cont
 
 For more details, see [S2I Requirements](https://docs.openshift.com/container-platform/3.11/creating_images/s2i.html#creating-images-s2i).
 
-### Build: Add missing variables
+### Configure the Build and Deployment
+
+The build- and deployment process can be altered by using environment variables.
+
+#### Build: Add missing variables
 
 1. Navigate to the build configuration: `Project 'userXY' - Builds - Builds - my-thai-star - Environment`
 2. Add the following ENV variables:
@@ -19,12 +23,17 @@ For more details, see [S2I Requirements](https://docs.openshift.com/container-pl
   - MAVEN_S2I_ARTIFACT_DIRS: server/target
   - S2I_SOURCE_DEPLOYMENTS_FILTER: *.war
 
-### Deployment: Add missing variables
+#### Deployment: Add missing variables
 
 1. Navigate to the build configuration: `Project 'userXY' - Applications - Deployments - my-thai-star - Environment`
-2. Add the following ENV variables:
+2. Add the following ENV variable:
 
   - JAVA_APP_JAR: mythaistar-bootified.war
 
-Re-start the build process.
+`Re-start the build process.`
 
+### Reference
+
+* [How Builds Work](https://docs.openshift.com/container-platform/3.11/dev_guide/builds/index.html)
+* [Basic Build Operations](https://docs.openshift.com/container-platform/3.11/dev_guide/builds/basic_build_operations.html)
+* [Triggering Builds](https://docs.openshift.com/container-platform/3.11/dev_guide/builds/triggering_builds.html)
