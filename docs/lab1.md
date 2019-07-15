@@ -28,7 +28,11 @@ list of projects that your user has permission to work with.
 
 ### Prepare Maven
 
+#### pom.xml
+
 Open `my-thai-star/java/mtsj/pom.xml`. Add `snippets/pom.xm` (from project *my-thai-star-workshop*) to the end of project's pom.xml file. 
+
+#### settings.xml
 
 In the terminal window:
 

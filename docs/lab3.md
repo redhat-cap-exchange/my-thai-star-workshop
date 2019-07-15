@@ -20,13 +20,21 @@ You can create a list of objects from a template using the CLI or, if a template
 
 If you have a JSON or YAML file that defines a template, you can upload the template to projects using the CLI. This saves the template to the project for repeated use by any user with appropriate access to that project.
 
-Upload the Build-template using the CLI:
+#### Prepare the Templates before uploading
+
+In the workspace, open template `templates/build-mythaistar` and search for the git reference:
+
+![Lab3](images/lab3-git.png)
+
+Replace 'uri:' with `$GOGS_REPO_URL`
+
+In the terminal window, switch to the `my-thai-star-workshop` directory:
 
 ```bash
-oc create -f https://raw.githubusercontent.com/redhat-capgemini-exchange/my-thai-star-workshop/master/templates/build-mythaistar-java.yaml
+cd /projects/my-thai-star-workshop/
 ```
 
-or
+Upload the Build-template using the CLI:
 
 ```bash
 oc create -f templates/build-mythaistar.java
@@ -37,7 +45,7 @@ Verify that the build is running.
 Upload the Deployment-template using the CLI:
 
 ```bash
-oc create -f https://raw.githubusercontent.com/redhat-capgemini-exchange/my-thai-star-workshop/master/templates/deploy-mythaistar-java.yaml
+oc create -f templates/deploy-mythaistar-java.yaml
 ```
 
 Once the build is finished, the app will be automatically deployed.

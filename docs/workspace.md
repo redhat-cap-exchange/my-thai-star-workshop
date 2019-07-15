@@ -20,10 +20,12 @@ Now you can import the newly forked My Thai Star reference app into your workspa
 
 ![CodeReady Workspaces - Workspace](images/codeready-repo.png)
 
+The repositorie's URL you just copied will be referenced as `$GOGS_REPO_URL` in the docs.
+
 In the Project Explorer pane, `click on 'Import Project...'` and enter the following:
 
   * Type: **GIT**
-  * URL: **$GOGS_REPO**
+  * URL: **$GOGS_REPO_URL**
   * Name: **my-thai-star**
   * Check **Branch**. User branch `develop`
 
