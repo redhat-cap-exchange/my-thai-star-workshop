@@ -19,7 +19,7 @@ Now you can import the project skeletons into your workspace.
 In the Project Explorer pane, `click on 'Import Project...'` and enter the following:
 
   * Type: **GIT**
-  * URL: **{{REPO_URL}}**
+  * URL: [https://github.com/devonfw/my-thai-star.git](https://github.com/devonfw/my-thai-star.git)
   * Name: **my-thai-star**
   * Check **Branch**. User branch `develop`
 
@@ -41,14 +41,15 @@ For the rest of these labs, anytime you need to run a command in a terminal, you
 
 In order to login, `issue the following command` and log in as `$OPENSHIFT_USER @ $OPENSHIFT_PASSWORD`
 
-  $ oc login {{OPENSHIFT_CONSOLE_URL}}
-
+```bash
+  $ oc login $OPENSHIFT_CONSOLE_URL
+```
 
 Congratulations, you are now authenticated to the OpenShift server.
 
 OpenShift ships with a web-based console that will allow users to
 perform various tasks via a browser.  To get a feel for how the web console
-works, open your browser and go to [OpenShift Web Console]({{ OPENSHIFT_CONSOLE_URL }}){:target="_blank"}.
+works, open your browser and go to *$OPENSHIFT_CONSOLE_URL*.
 
 The first screen you will see is the authentication screen. Enter your username and password (`$OPENSHIFT_USER @ $OPENSHIFT_PASSWORD`) and 
 then log in. After you have authenticated to the web console, you will be presented with a
