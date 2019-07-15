@@ -38,7 +38,7 @@ Go to *$GOGS_URL*, then click *'Sign In'*.
 
 Log in as `$OPENSHIFT_USER @ $OPENSHIFT_PASSWORD`
 
-Navigate to `devonfw` organization.
+Navigate to the `devonfw` organization.
 
 ![Gogs - devonfw](images/setup-gogs1.png)
 
