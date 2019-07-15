@@ -16,15 +16,16 @@ It takes a little while for the workspace to be ready. When it's ready, you will
 
 ### Importing the My-Thai-Star reference app
 
-Now you can import the project skeletons into your workspace.
+Now you can import the newly forked My Thai Star reference app into your workspace. First, navigate to the repository and copy it's URL:
+
+![CodeReady Workspaces - Workspace](images/codeready-repo.png)
 
 In the Project Explorer pane, `click on 'Import Project...'` and enter the following:
 
   * Type: **GIT**
-  * URL: [https://github.com/devonfw/my-thai-star.git](https://github.com/devonfw/my-thai-star.git)
+  * URL: **$GOGS_REPO**
   * Name: **my-thai-star**
   * Check **Branch**. User branch `develop`
-
 
 ![CodeReady Workspaces - Workspace](images/codeready-import.png)
 
