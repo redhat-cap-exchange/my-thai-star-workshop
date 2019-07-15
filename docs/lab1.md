@@ -54,7 +54,7 @@ The easiest way to terminate the app is to kill it's process. Open a `open a sec
 ps -u
 ````
 
-![Lab1 - Terminal](images/lab1-terminal.png)
+![Lab1](images/lab1-terminal.png)
 
 Copy the process ID and kill it:
 
