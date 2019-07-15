@@ -35,7 +35,7 @@ In the Project Explorer pane, `click on 'Import Project...'` and enter the follo
 
 ### Importing the workshop assets
 
-You will need certain assets (e.g. code snippets) later in the workshop. Import the repository following the same steps as above into your workspace.
+You will need certain assets (e.g. code snippets) later in the workshop. Import the workshop repository following the same steps as above into your workspace.
 
 In the workspace, `click on 'Workspace - Import Project...'` and enter the following:
 
@@ -43,30 +43,5 @@ In the workspace, `click on 'Workspace - Import Project...'` and enter the follo
   * URL: **https://github.com/redhat-capgemini-exchange/my-thai-star-workshop.git**
   * Name: **my-thai-star-workshop**
 
-
-### Terminal Window of CodeReady Workspaces
-
-For the rest of these labs, anytime you need to run a command in a terminal, you can use the CodeReady Workspaces *Terminal* window.
-
-![CodeReady Workspaces - Terminal](images/codeready-terminal.png)
-
-
-### Explore OpenShift with OpenShift CLI
-
-In order to login, `issue the following command` and log in as `$OPENSHIFT_USER @ $OPENSHIFT_PASSWORD`
-
-```bash
-  $ oc login $OPENSHIFT_CONSOLE_URL
-```
-
-Congratulations, you are now authenticated to the OpenShift server.
-
-OpenShift ships with a web-based console that will allow users to
-perform various tasks via a browser.  To get a feel for how the web console
-works, open your browser and go to *$OPENSHIFT_CONSOLE_URL*.
-
-The first screen you will see is the authentication screen. Enter your username and password (`$OPENSHIFT_USER @ $OPENSHIFT_PASSWORD`) and 
-then log in. After you have authenticated to the web console, you will be presented with a
-list of projects that your user has permission to work with. 
 
 Now you are ready to get started with the labs!
