@@ -1,6 +1,6 @@
 # Setup the Development Environment
 
-![CodeReady](images/codeready.png | width=500)
+![CodeReady](images/codeready.png)
 
 ### What is CodeReady Workspaces?
 
@@ -16,14 +16,14 @@ Built on the open Eclipse Che project, [Red Hat CodeReady Workspaces](https://de
 
 Go to [CodeReady Workspaces]( {{CODEREADY_WORKSPACES_URL}} ){:target="_blank"} then click on *'Openshift v3'* to log in through [OpenShift OAuth](https://docs.openshift.com/container-platform/3.11/architecture/additional_concepts/authentication.html#oauth){:target="_blank"}.
 
-![CodeReady Workspaces - Log in](images/codeready-oauth.png | width=300)
+![CodeReady Workspaces - Log in](images/codeready-oauth.png)
 
 Log in as `$OPENSHIFT_USER @ $OPENSHIFT_PASSWORD` and `click on 'Allow selected permissions'`
 
-![CodeReady Workspaces - Log in](images/codeready-login.png | width=300)
+![CodeReady Workspaces - Log in](images/codeready-login.png)
 
-![CodeReady Workspaces - Log in](images/codeready-authorize-access.png | width=300)
+![CodeReady Workspaces - Log in](images/codeready-authorize-access.png)
 
 Finally, `enter your account information` and `click on 'Submit'`
 
-![CodeReady Workspaces - Log in](images/codeready-account-information.png | width=300)
+![CodeReady Workspaces - Log in](images/codeready-account-information.png)
