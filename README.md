@@ -4,4 +4,4 @@ The "Road to cloud-native" workshop is a 1-day event with a series of hands-on-l
 
 ## Workshop Outline
 
-[Setup](docs/setup.md)
+[Setup Red Hat CodeReady Workspaces](docs/setup.md)
