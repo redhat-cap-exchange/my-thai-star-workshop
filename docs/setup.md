@@ -1,4 +1,4 @@
-# Setup the Development Environment
+# Setup CodeReady Workspaces
 
 ![CodeReady](images/codeready.png)
 
