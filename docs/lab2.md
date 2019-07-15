@@ -10,6 +10,41 @@ Source-to-Image (S2I) is a tool for building reproducible, Docker-formatted cont
 
 For more details, see [S2I Requirements](https://docs.openshift.com/container-platform/3.11/creating_images/s2i.html#creating-images-s2i).
 
+### Create a new project in OpenShift
+
+In the terminal window, in order to login, `issue the following command` and log in as `$OPENSHIFT_USER @ $OPENSHIFT_PASSWORD`
+
+```bash
+  $ oc login $OPENSHIFT_CONSOLE_URL
+```
+
+Now create a *project* in OpenShift.
+
+**NOTE:**
+Project share a global namespace on the cluster, i.e. project names must be unique. Therefor append your user's number to the project name!
+
+
+```bash
+oc new-project userXY
+```
+
+where `XY` is your user's number.
+
+Switch to the OpenShift web console at `$OPENSHIFT_CONSOLE_URL` and navigate to the new project.
+
+### Build the app in OpenShift
+
+1. Navigate to the new project
+2. Manually create a new Java app: Browse Catalog - Red Hat OpenJDK8
+3. Complete the configuration wizzard
+  - Name of the app
+  - Point to you app code
+  - Advanced options: git branch, context dir
+
+Watch the build & deploy process ...
+
+**EXPECT AN ERROR !!**
+
 ### Configure the Build and Deployment
 
 The build- and deployment process can be altered by using environment variables.
