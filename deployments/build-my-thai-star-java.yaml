@@ -36,9 +36,7 @@ items:
     source:
       contextDir: java/mtsj
       git:
-        #uri: https://github.com/redhat-capgemini-exchange/my-thai-star.git
-        #ref: develop
-        uri: http://gogs-cicd.apps.devonfw-0a2e.openshiftworkshop.com/user1/my-thai-star.git
+        uri: https://github.com/devonfw/my-thai-star.git
         ref: develop
       type: Git
     

@@ -93,6 +93,6 @@ Switch to the OpenShift web console at `$OPENSHIFT_CONSOLE_URL` and navigate to 
   - Point to you app code
   - Advanced options: git branch, context dir
 
-Watch the build process ...
+Watch the build & deploy process ...
 
 **EXPECT AN ERROR !!**
