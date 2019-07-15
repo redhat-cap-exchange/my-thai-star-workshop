@@ -1,12 +1,4 @@
-<!-- part 1 -->
-<repositories>
-  <repository>
-    <id>maven-group</id>
-    <url>http://nexus.roadtocloudnative.svc.cluster.local:8081/nexus/content/groups/public/</url>
-  </repository>
-</repositories>
 
-<!-- part 2 -->
 <distributionManagement>
   <snapshotRepository>
     <id>nexus-snapshots</id>

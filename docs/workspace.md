@@ -13,7 +13,9 @@ It takes a little while for the workspace to be ready. When it's ready, you will
 
 ![CodeReady Workspaces - Workspace](images/codeready-workspace.png)
 
-### Importing the lab project
+
+### Importing the My-Thai-Star reference app
+
 Now you can import the project skeletons into your workspace.
 
 In the Project Explorer pane, `click on 'Import Project...'` and enter the following:
@@ -29,6 +31,7 @@ In the Project Explorer pane, `click on 'Import Project...'` and enter the follo
 `Click on 'Import'`. Make sure you choose the **Blank** project configuration since the repository contains multiple project skeletons. `Click on 'Save'`
 
 ![CodeReady Workspaces - Workspace](images/codeready-import-save.png)
+
 
 ### Terminal Window of CodeReady Workspaces
 

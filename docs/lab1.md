@@ -24,7 +24,7 @@ Switch to the java component`s root location:
 cd java/mtsj
 ```
 
-### Build
+### Build the app
 
 ```shell
 mvn install -DskipTests=true
@@ -35,6 +35,33 @@ mvn install -DskipTests=true
 ```shell
 mvn deploy -DskipTests=true
 ```
+
+### Launch the app
+
+Launch the app within the workspace:
+
+```bash
+java -jar server/target/mythaistar-bootified.war
+```
+
+You can now wath the Spring Boot application spin up.
+
+#### How to terminate the app?
+
+The easiest way to terminate the app is to kill it's process. Open a `open a second terminal` by clicking on the '+' next the current terminal window:
+
+```bash
+ps -u
+````
+
+![Lab1 - Terminal](images/lab1-terminal.png)
+
+Copy the process ID and kill it:
+
+```bash
+kill -9 <process ID>
+```
+
 
 * Launch the java API service
 * Test access to the service
