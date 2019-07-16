@@ -44,5 +44,13 @@ When promted by git, log in as `$OPENSHIFT_USER @ $OPENSHIFT_PASSWORD`
 2. Upload `my-thai-star-workshop/templates/build-mythaistar-angular.yaml`
 3. Upload `my-thai-star-workshop/templates/deploy-mythaistar-angular.yaml`
 
+```bash
+cd /projects/my-thai-star-workshop
+
+oc create -f templates/build-mythaistar-angular.yaml
+oc create -f templates/deploy-mythaistar-angular.yaml
+
+```
+
 **SHOW THE RUNNING APP !**
 
