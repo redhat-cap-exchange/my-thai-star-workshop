@@ -50,3 +50,16 @@ oc create -f templates/deploy-mythaistar-java.yaml
 
 Once the build is finished, the app will be automatically deployed.
 
+### Adding a Route
+
+An OpenShift Container Platform **route** exposes a **service** at a host name, like *www.example.com*, so that external clients can reach it by name.
+
+DNS resolution for a host name is handled separately from routing; your administrator may have configured a cloud domain that will always correctly resolve to the OpenShift Container Platform router, or if using an unrelated host name you may need to modify its DNS records independently to resolve to the router.
+
+Add a route to **mythaistar-java service**:
+
+```bash
+
+oc create -f templates/route-mythaistar-java.yaml
+
+```
