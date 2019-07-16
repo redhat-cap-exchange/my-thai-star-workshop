@@ -40,10 +40,15 @@ items:
         ref: develop
       type: Git
     
+    resources:
+      limits:
+        memory: '4096Mi'
+        cpu: '2000m'
+
     strategy:
       sourceStrategy:
         env:
-          - NPM_MIRROR:
+          - name: NPM_MIRROR
             value: 'http://nexus.roadtocloudnative.svc:8081/repository/npm-group/'
             
           - name: API_ENDPOINT

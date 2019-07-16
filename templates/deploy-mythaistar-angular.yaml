@@ -60,7 +60,7 @@ items:
     name: mythaistar-angular
   spec:
     ports:
-    - name: 8080-tcp
+    - name: web
       port: 8080
       protocol: TCP
       targetPort: 8080
@@ -69,3 +69,16 @@ items:
       deploymentconfig: mythaistar-angular
   status:
     loadBalancer: {}
+
+- kind: Route
+  apiVersion: "v1"
+  metadata:
+    name: 'mythaistar'
+    annotations:
+      kubernetes.io/tls-acme: "true"
+  spec:
+    to:
+      kind: Service
+      name: 'mythaistar-angular'
+    port:
+      targetPort: web

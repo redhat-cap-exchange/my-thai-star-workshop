@@ -56,7 +56,7 @@ An OpenShift Container Platform **route** exposes a **service** at a host name, 
 
 DNS resolution for a host name is handled separately from routing; your administrator may have configured a cloud domain that will always correctly resolve to the OpenShift Container Platform router, or if using an unrelated host name you may need to modify its DNS records independently to resolve to the router.
 
-Add a route to **mythaistar-java service**:
+Add a route to **mythaistar-java** service:
 
 ```bash
 
