@@ -4,9 +4,7 @@ OpenShift Container Platform provides [S2I](https://docs.openshift.com/container
 
 ### Explore the Node.js S2I on GitHub
 
-The source of the Node.js S2I Image is available on GitHub. 
-
-[sclorg/s2i-nodejs-container](https://github.com/sclorg/s2i-nodejs-container)
+The source of the Node.js S2I Image is available on GitHub: [sclorg/s2i-nodejs-container](https://github.com/sclorg/s2i-nodejs-container)
 
 ### Build process
 
@@ -26,10 +24,25 @@ Typically, builder images provide their own version of the S2I scripts that cove
 
 ### Add custom scripts
 
-1. Copy `snippets/.s2i` to `my-thai-star/angular`
-2. Commit and push changes in `my-thai-star`
-3. Change `$API_ENDPOINT` in `templates/build-mythaistar-angular.yaml`
-4. Upload `templates/build-mythaistar-angular.yaml`
-5. Upload `templates/deploy-mythaistar-angular.yaml`
+1. Copy `my-thai-star-workshop/snippets/.s2i` to `my-thai-star/angular`
+2. Add new files to git, commit and push changes in `my-thai-star`
+
+```bash
+cd /projects/my-thai-star
+
+git add -A angular/.s2i
+git commit -am "added custom s2i scripts"
+git push origin develop
+
+```
+
+When promted by git, log in as `$OPENSHIFT_USER @ $OPENSHIFT_PASSWORD`
+
+### Build and deploy the front-end
+
+1. Change `$API_ENDPOINT` in `my-thai-star-workshop/templates/build-mythaistar-angular.yaml`
+2. Upload `my-thai-star-workshop/templates/build-mythaistar-angular.yaml`
+3. Upload `my-thai-star-workshop/templates/deploy-mythaistar-angular.yaml`
 
 **SHOW THE RUNNING APP !**
+
