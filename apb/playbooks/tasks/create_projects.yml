@@ -1,0 +1,20 @@
+---
+# Create and configuration application project
+- name: check if {{ project_name }} project exists
+  command: "oc get project {{ project_name }}"
+  register: project_result
+  ignore_errors: true
+- name: delete {{ project_name }} project
+  command: >
+      oc delete project {{ project_name }}
+  when: project_result is succeeded
+- name: create {{ project_name }} project
+  command: >
+      oc new-project {{ project_name }}
+- name: grant {{ username }} to edit the project
+  command: "oc adm policy add-role-to-user admin {{ username }} -n {{ project_name }}"
+- name: grant applications in the the project to view Openshift API
+  command: "oc policy add-role-to-user view -n {{ project_name }} -z default"
+- name: update limit range
+  shell: "echo {{ lookup('template', '{{ playbook_dir }}/templates/project-limits.yaml.j2')  | quote }} | oc replace -f -"
+

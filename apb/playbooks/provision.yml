@@ -7,7 +7,7 @@
     openshift_password: 
     openshift_token:
     openshift_master_url: 
-    gogs_dev_user: developer
+    gogs_dev_user: user
     gogs_pwd: openshift
     infrasvcs_adm_user: adminuser
     infrasvcs_adm_pwd: adminpwd
@@ -66,6 +66,7 @@
       gogs_admin_password: "{{ infrasvcs_adm_pwd }}"
       gogs_user: "{{ gogs_dev_user }}"
       gogs_password: "{{ gogs_pwd }}"
+      gogs_generate_user_count: "{{ user_count }}"
     tags: gogs
 
   # install openjdk imagestream
@@ -136,3 +137,10 @@
       stack_template: "{{ item }}"
     with_fileglob:
     - "{{ playbook_dir }}/templates/stacks/*-stack.json.j2"
+
+  - name: preconfigure projects
+    include: "{{ playbook_dir }}/tasks/create_projects.yml"
+    vars:
+      username: "{{ 'user%d' | format(item) }}"
+      project_name: "{{ 'mythaistar-user%d' | format(item) }}"
+    loop: "{{ range(1, user_count|int + 1) | list }}"
