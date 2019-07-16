@@ -7,27 +7,27 @@ items:
   metadata:
     annotations:
       description: My-thai-star java image
-      tags: java, my-thai-star
+      tags: java, mythaistar
     labels:
-      app: my-thai-star-java
-    name: my-thai-star-java
+      app: mythaistar-java
+    name: mythaistar-java
 
 - kind: BuildConfig
   apiVersion: 'v1'
   metadata:
     labels:
-      app: my-thai-star-java
-    name: my-thai-star-java
+      app: mythaistar-java
+    name: mythaistar-java
   spec:
     
     runPolicy: 'Serial' 
     
     triggers:
     - github:
-        secret: my-thai-star
+        secret: mythaistar
       type: GitHub
     - generic:
-        secret: my-thai-star
+        secret: mythaistar
       type: Generic
     - type: ConfigChange
     - imageChange: {}
@@ -59,4 +59,4 @@ items:
     output:
       to:
         kind: ImageStreamTag
-        name: 'my-thai-star-java:latest'
+        name: 'mythaistar-java:latest'

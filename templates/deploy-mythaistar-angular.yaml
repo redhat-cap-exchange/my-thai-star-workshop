@@ -6,22 +6,22 @@ items:
   apiVersion: 'v1'
   metadata:
     labels:
-      app: my-thai-star-angular
-    name: my-thai-star-angular
+      app: mythaistar-angular
+    name: mythaistar-angular
   spec:
     replicas: 1
     
     selector:
-      app: my-thai-star-angular
-      deploymentconfig: my-thai-star-angular
+      app: mythaistar-angular
+      deploymentconfig: mythaistar-angular
     strategy:
       resources: {}
     
     template:
       metadata:
         labels:
-          app: my-thai-star-angular
-          deploymentconfig: my-thai-star-angular
+          app: mythaistar-angular
+          deploymentconfig: mythaistar-angular
       
       spec:
         containers:
@@ -29,9 +29,10 @@ items:
             #- name: JAVA_APP_JAR
             #  value: mtsj-server-bootified.war
 
-            image: my-thai-star-angular:latest
+            image: mythaistar-angular:latest
             imagePullPolicy: Always
-            name: my-thai-star-angular
+            
+            name: mythaistar-angular
             
             ports:
             - containerPort: 8080
@@ -45,18 +46,18 @@ items:
     - imageChangeParams:
         automatic: true
         containerNames:
-        - my-thai-star-angular
+        - mythaistar-angular
         from:
           kind: ImageStreamTag
-          name: my-thai-star-angular:latest
+          name: mythaistar-angular:latest
       type: ImageChange
 
 - kind: Service
   apiVersion: 'v1'
   metadata:
     labels:
-      app: my-thai-star-angular
-    name: my-thai-star-angular
+      app: mythaistar-angular
+    name: mythaistar-angular
   spec:
     ports:
     - name: 8080-tcp
@@ -64,7 +65,7 @@ items:
       protocol: TCP
       targetPort: 8080
     selector:
-      app: my-thai-star-angular
-      deploymentconfig: my-thai-star-angular
+      app: mythaistar-angular
+      deploymentconfig: mythaistar-angular
   status:
     loadBalancer: {}

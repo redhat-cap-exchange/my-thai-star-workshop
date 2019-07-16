@@ -23,7 +23,6 @@ yarn
 echo "---> Installing add-ons ..."
 yarn global add serve
 
-
 echo "---> Building in production mode"
 yarn build --configuration=production
 

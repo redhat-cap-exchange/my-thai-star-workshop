@@ -6,22 +6,22 @@ items:
   apiVersion: 'v1'
   metadata:
     labels:
-      app: my-thai-star
-    name: my-thai-star-java
+      app: mythaistar
+    name: mythaistar-java
   spec:
     replicas: 1
     
     selector:
-      app: my-thai-star-java
-      deploymentconfig: my-thai-star-java
+      app: mythaistar-java
+      deploymentconfig: mythaistar-java
     strategy:
       resources: {}
     
     template:
       metadata:
         labels:
-          app: my-thai-star-java
-          deploymentconfig: my-thai-star-java
+          app: mythaistar-java
+          deploymentconfig: mythaistar-java
       
       spec:
         containers:
@@ -29,9 +29,9 @@ items:
             - name: JAVA_APP_JAR
               value: mythaistar-bootified.war
 
-            image: my-thai-star-java:latest
+            image: mythaistar-java:latest
             imagePullPolicy: Always
-            name: my-thai-star-java
+            name: mythaistar-java
             
             ports:
             - containerPort: 8443
@@ -49,18 +49,18 @@ items:
     - imageChangeParams:
         automatic: true
         containerNames:
-        - my-thai-star-java
+        - mythaistar-java
         from:
           kind: ImageStreamTag
-          name: my-thai-star-java:latest
+          name: mythaistar-java:latest
       type: ImageChange
 
 - kind: Service
   apiVersion: 'v1'
   metadata:
     labels:
-      app: my-thai-star-java
-    name: my-thai-star-java
+      app: mythaistar-java
+    name: mythaistar-java
   spec:
     ports:
     - name: 8081-tcp
@@ -76,7 +76,7 @@ items:
       protocol: TCP
       targetPort: 8778
     selector:
-      app: my-thai-star-java
-      deploymentconfig: my-thai-star-java
+      app: mythaistar-java
+      deploymentconfig: mythaistar-java
   status:
     loadBalancer: {}

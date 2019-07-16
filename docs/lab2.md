@@ -1,4 +1,4 @@
-## Lab 2 - Anatomy of a S2I Build
+## Lab 2 - Source-to-Image (S2I) Build
 
 ### What is a Build?
 
