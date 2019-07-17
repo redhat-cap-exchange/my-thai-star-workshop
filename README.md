@@ -10,3 +10,5 @@ The "Road to cloud-native" workshop is a 1-day event with a series of hands-on-l
 * [Lab 2 - Source-to-Image (S2I) Build](docs/lab2.md)
 * [Lab 3 - Builds and Deployments using Templates](docs/lab3.md)
 * [Lab 4 - Customizing the S2I build process](docs/lab4.md)
+* [Lab 5 - Monitoring Application Health ](docs/health.md)
+

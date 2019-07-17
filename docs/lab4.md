@@ -54,3 +54,6 @@ oc create -f templates/deploy-mythaistar-angular.yaml
 
 **SHOW THE RUNNING APP !**
 
+## Next steps
+
+[Lab 5 - Monitoring Application Health ](health.md)
