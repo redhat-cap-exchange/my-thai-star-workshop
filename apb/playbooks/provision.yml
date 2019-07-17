@@ -7,7 +7,7 @@
     openshift_password: 
     openshift_token:
     openshift_master_url: 
-    gogs_dev_user: user
+    gogs_dev_user: developer
     gogs_pwd: openshift
     infrasvcs_adm_user: adminuser
     infrasvcs_adm_pwd: adminpwd
