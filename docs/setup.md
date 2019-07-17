@@ -55,3 +55,7 @@ To switch the default branch to `develop`, click `Settings` and then navigate to
 ![Gogs - devonfw](images/setup-gogs5.png)
 
 Click `Update` to save your changes.
+
+### Next steps
+
+[Next: Create a workspace](docs/workspace.md)
