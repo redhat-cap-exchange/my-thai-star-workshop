@@ -58,4 +58,4 @@ Click `Update` to save your changes.
 
 ### Next steps
 
-[Next: Create a workspace](docs/workspace.md)
+[Create a workspace](workspace.md)

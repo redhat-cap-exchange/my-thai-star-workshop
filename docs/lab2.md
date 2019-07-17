@@ -74,3 +74,7 @@ The build- and deployment process can be altered by using environment variables.
 * [How Builds Work](https://docs.openshift.com/container-platform/3.11/dev_guide/builds/index.html)
 * [Basic Build Operations](https://docs.openshift.com/container-platform/3.11/dev_guide/builds/basic_build_operations.html)
 * [Triggering Builds](https://docs.openshift.com/container-platform/3.11/dev_guide/builds/triggering_builds.html)
+
+## Next steps
+
+[Lab 3 - Builds and Deployments using Templates](lab3.md)

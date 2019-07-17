@@ -47,3 +47,7 @@ In the workspace, `click on 'Workspace - Import Project...'` and enter the follo
 
 
 Now you are ready to get started with the labs!
+
+### Next steps
+
+[Lab 1 - A first build](lab1.md)

@@ -63,3 +63,7 @@ Add a route to **mythaistar-java** service:
 oc create -f templates/route-mythaistar-java.yaml
 
 ```
+
+## Next steps
+
+[Lab 4 - Customizing the S2I build process](lab4.md)

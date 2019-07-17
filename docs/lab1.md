@@ -91,3 +91,7 @@ Copy the PID and kill the process:
 ```bash
 kill -9 <PID>
 ```
+
+## Next steps
+
+[Lab 2 - Source-to-Image (S2I) Build](lab2.md)
