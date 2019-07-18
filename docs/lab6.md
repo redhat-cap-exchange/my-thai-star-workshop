@@ -51,9 +51,18 @@ database connection health, backoffice system availability, etc).
 [Spring Boot Actuator](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready) is a 
 sub-project of Spring Boot which adds health and management HTTP endpoints to the application. Enabling Spring Boot 
 Actuator is done via adding **org.springframework.boot:spring-boot-starter-actuator** dependency to the Maven project 
-dependencies which is already done for the **Catalog Service**.
+dependencies:
 
-Verify that the health endpoint works for the **Catalog Service** using `*curl*`
+```xml
+<dependencies>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-actuator</artifactId>
+	</dependency>
+</dependencies>
+```
+
+Verify that the health endpoint works for the **My Thai Star Service** using `*curl*`
 
 ```bash
 $ curl http://catalog.{{COOLSTORE_PROJECT}}.svc:8080/health
