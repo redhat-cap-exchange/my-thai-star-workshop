@@ -15,4 +15,4 @@ management.security.enabled=false
 
 ## Next steps
 
-[Lab 6 - Monitoring Application Health ](lab6.md)
+[Lab 8 - Service Resilience and Fault Tolerance](lab8.md)
