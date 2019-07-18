@@ -1,6 +1,4 @@
-## Lab 8 - Scaling
-
-## Service Resilience and Fault Tolerance
+## Lab 8 - Service Resilience and Fault Tolerance
 
 In this lab you will learn about how you can build service resilience and fault tolerance into 
 the applications both at the infrastructure level using OpenShift capabilities as well as 

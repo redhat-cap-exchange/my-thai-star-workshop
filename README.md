@@ -13,3 +13,4 @@ The "Road to cloud-native" workshop is a 1-day event with a series of hands-on-l
 * [Lab 5 - Simple CI/CD ](docs/lab5.md)
 * [Lab 6 - Monitoring Application Health ](docs/lab6.md)
 * [Lab 7 - Configuration ](docs/lab7.md)
+* [Lab 8 - Service Resilience and Fault Tolerance](docs/lab8.md)
