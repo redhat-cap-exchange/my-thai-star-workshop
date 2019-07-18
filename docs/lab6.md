@@ -91,7 +91,7 @@ TIP: **dc** is a short-hand for `deployment config`
 #### Add a Liveness Probe on the Catalog Deployment Config
 
 ```bash
-oc set probe dc/spring-boot-java --liveness --initial-delay-seconds=60 --failure-threshold=3 --get-url=http://:8080/health
+oc set probe dc/spring-boot-java --liveness --initial-delay-seconds=30 --failure-threshold=3 --get-url=http://:8080/health
 ```
 
 TIP: OpenShift automates deployments using [deployment triggers](https://docs.openshift.com/container-platform/3.11/dev_guide/deployments/basic_deployment_operations.html#triggers) 
@@ -120,7 +120,6 @@ oc set probe dc/spring-boot-java --readiness --initial-delay-seconds=60 --failur
 
 Voilà! OpenShift automatically restarts the basic-spring-boot pod and as soon as the health probes succeed, it is ready to receive traffic. 
 
-
 ### Monitoring Metrics
 
 Metrics are another important aspect of monitoring applications which is required in order to 
@@ -130,11 +129,12 @@ OpenShift provides container metrics out-of-the-box and displays how much memory
 each container has been consuming over time. In the project overview, you can see three charts 
 near each pod that shows the resource consumption by that pod.
 
-image:{% image_path health-metrics-brief.png %}[Container Metrics,740]
+![Container Metrics](images/health-metrics-brief.png)
 
 `*Click on any of the pods*` (blue circle) which takes you to the pod details. `*Click on the 'Metrics' tab*`
 to see a more detailed view of the metrics charts.
 
-image:{% image_path health-metrics-detailed.png %}[Container Metrics,900]
+![Container Metrics](images/health-metrics-detailed.png)
 
-Well done! You are ready to move on to the next lab.
+
+## Next steps
