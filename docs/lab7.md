@@ -1,4 +1,4 @@
-## Lab 7 - App Configuration
+## Lab 7 - Configuration
 
 #### Example
 
