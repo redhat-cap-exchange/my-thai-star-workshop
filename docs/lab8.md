@@ -94,10 +94,10 @@ down. Since the deployment config is used when starting the application pods, th
 
 When allocating compute resources to application pods, each container may specify a *request*
 and a *limit* value each for CPU and memory. The 
-[request] (https://docs.openshift.com/container-platform/3.11/dev_guide/compute_resources.html#dev-memory-requests)
+[request](https://docs.openshift.com/container-platform/3.11/dev_guide/compute_resources.html#dev-memory-requests)
 values define how much resource should be dedicated to an application pod so that it can run. It's 
 the minimum resources needed in other words. The 
-[limit](https://docs.openshift.com/container-platform/3.11/dev_guide/dev_guide/compute_resources.html#dev-memory-limits) values 
+[limit](https://docs.openshift.com/container-platform/3.11/dev_guide/compute_resources.html#dev-memory-limits) values 
 defines how much resource an application pod is allowed to consume, if there is more resources 
 on the node available than what the pod has requested. This is to allow various quality of service 
 tiers with regards to compute resources. You can read more about these quality of service tiers 
@@ -179,5 +179,4 @@ removes the application pod from the load-balancer to prevent sending traffic to
 ##### Application Pod Removal
 If an instance of the application pods gets removed, OpenShift automatically 
 starts new identical application pods based on the same container image and configuration so that the 
-specified number of instances are running at all times. An example of a removed pod is when an entire 
-
+specified number of instances are running at all times.
