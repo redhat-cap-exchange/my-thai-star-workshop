@@ -43,7 +43,7 @@ start listening until initialization is complete.
 ###  Explore Health REST Endpoints
 
 Let's add health probes to the microservices deployed so far.
-Spring Boot, Thorntail and Vert.x all provide out-of-the-box support for creating RESTful endpoints that
+Spring Boot provides out-of-the-box support for creating RESTful endpoints that
 provide details on the health of the application. These endpoints by default provide basic data about the 
 service however they all provide a way to customize the health data and add more meaningful information (e.g. 
 database connection health, backoffice system availability, etc).
@@ -62,12 +62,12 @@ dependencies:
 </dependencies>
 ```
 
-Verify that the health endpoint works for the **My Thai Star Service** using `*curl*`
+Verify that the health endpoint works for **basic-spring-boot** using `*curl*`
 
 ```bash
-$ curl http://catalog.{{COOLSTORE_PROJECT}}.svc:8080/health
+$ curl http://example-basic-userXY.apps.$CLUSTER_ID.openshiftworkshop.com/health
 
-{"status":"UP"}
+{"status":"UP","diskSpace":{"status":"UP","total":53674487808,"free":27763781632,"threshold":10485760}}
 ```
 
 ###  Monitoring Catalog Service Health
@@ -81,12 +81,10 @@ deployment configs in the project.
 ```bash
 $ oc get dc
 
-NAME        REVISION   DESIRED   CURRENT   TRIGGERED BY
-catalog     1          1         1         config,image(catalog:latest)
-gateway     1          1         1         config,image(gateway:latest)
-inventory   1          1         1         config,image(inventory:latest)
-web         1          1         1         config,image(web:latest)
-``
+NAME               REVISION   DESIRED   CURRENT   TRIGGERED BY
+spring-boot-java   1          1         1         config,image(spring-boot-java:latest)
+```
+
 
 TIP: **dc** stands for deployment config
 
