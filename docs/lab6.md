@@ -115,7 +115,7 @@ to restart the container and when to leave it alone and remove it from the load-
 would  manually investigate the issue. 
 
 ```bash
-oc set probe dc/spring-boot-java --readiness --initial-delay-seconds=60 --failure-threshold=3 --get-url=http://:8080/health
+oc set probe dc/spring-boot-java --readiness --initial-delay-seconds=30 --failure-threshold=3 --get-url=http://:8080/health
 ```
 
 OpenShift automatically restarts the basic-spring-boot pod and as soon as the health probes succeed, it is ready to receive traffic. 
@@ -136,7 +136,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CrashController {
     @GetMapping("/crash")
 	public void crash() {
-		System.exit(-1) ;
+		Runtime.getRuntime().halt(0);
 	}
 }
 ```
@@ -150,7 +150,9 @@ git commit -am "added a new controller"
 git push origin master
 ``
 
-Since we added a Webhook trigger in the previous lab, pushing to Git will start a new build.
+Since we added a Webhook trigger in the previous lab, pushing to Git will start a new build. In the OpenShift UI, head over to `basic-userXY - Monitoring` and observe the build & deployment.
+
+**CRASH THE APP!**
 
 ### Monitoring Metrics
 
