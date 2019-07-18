@@ -118,7 +118,39 @@ would  manually investigate the issue.
 oc set probe dc/spring-boot-java --readiness --initial-delay-seconds=60 --failure-threshold=3 --get-url=http://:8080/health
 ```
 
-Voilà! OpenShift automatically restarts the basic-spring-boot pod and as soon as the health probes succeed, it is ready to receive traffic. 
+OpenShift automatically restarts the basic-spring-boot pod and as soon as the health probes succeed, it is ready to receive traffic. 
+
+### Test the Probes
+
+In order to simulate application failure, let's add a REST endpoint that, when called, crashes the app.
+
+In your workspace, add a **new Java Class** to basic-spring-boot in package **com.example.springbootmanagementexample**: `CrashController.java`
+
+```java
+package com.example.springbootmanagementexample;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CrashController {
+    @GetMapping("/crash")
+	public void crash() {
+		System.exit(-1) ;
+	}
+}
+```
+
+Add the new file to git, commit and push:
+
+```bash
+cd /projects/basic-spring-boot
+git add -A
+git commit -am "added a new controller"
+git push origin master
+``
+
+Since we added a Webhook trigger in the previous lab, pushing to Git will start a new build.
 
 ### Monitoring Metrics
 
