@@ -1,4 +1,4 @@
-# Lab 5 - Monitoring Application Health 
+# Lab 6 - Monitoring Application Health 
 
 In this lab we will learn how to monitor application health using OpenShift 
 health probes and how you can see container resource consumption using metrics.
@@ -148,7 +148,7 @@ cd /projects/basic-spring-boot
 git add -A
 git commit -am "added a new controller"
 git push origin master
-``
+```
 
 Since we added a Webhook trigger in the previous lab, pushing to Git will start a new build. In the OpenShift UI, head over to `basic-userXY - Monitoring` and observe the build & deployment.
 
