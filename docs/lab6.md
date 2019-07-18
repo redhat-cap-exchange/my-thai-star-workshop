@@ -85,20 +85,19 @@ NAME               REVISION   DESIRED   CURRENT   TRIGGERED BY
 spring-boot-java   1          1         1         config,image(spring-boot-java:latest)
 ```
 
+TIP: **dc** is a short-hand for `deployment config`
 
-TIP: **dc** stands for deployment config
 
-`*Add a Liveness Probe on the Catalog Deployment Config*`:
+#### Add a Liveness Probe on the Catalog Deployment Config
 
-----
-$ oc set probe dc/catalog --liveness --initial-delay-seconds=30 --failure-threshold=3 --get-url=http://:8080/health
-----
+```bash
+oc set probe dc/spring-boot-java --liveness --initial-delay-seconds=60 --failure-threshold=3 --get-url=http://:8080/health
+```
 
-TIP: OpenShift automates deployments using 
-{{OPENSHIFT_DOCS_BASE}}/dev_guide/deployments/basic_deployment_operations.html#triggers[deployment triggers^] 
+TIP: OpenShift automates deployments using [deployment triggers](https://docs.openshift.com/container-platform/3.11/dev_guide/deployments/basic_deployment_operations.html#triggers) 
 that react to changes to the container image or configuration. 
 Therefore, as soon as you define the probe, OpenShift automatically redeploys the 
-Catalog pod using the new configuration including the liveness probe. 
+spring-boot-java pod using the new configuration including the liveness probe. 
 
 The `*--get-url*` defines the HTTP endpoint to use for check the liveness of the container. The ***http://:8080*** 
 syntax is a convenient way to define the endpoint without having to worry about the hostname for the running 
@@ -108,59 +107,19 @@ TIP: It is possible to customize the probes even further using for example `*--i
 to wait after the container starts and before to begin checking the probes. Run `*oc set probe --help*` to get 
 a list of all available options.
 
-`*Add a Readiness Probe on the Catalog Deployment Config*` using the same **/health** endpoint that you used for 
+Add a `Readiness Probe on the Deployment Config` using the same **/health** endpoint that you used for 
 the liveness probe.
 
 TIP: It's recommended to have separate endpoints for readiness and liveness to indicate to OpenShift when 
 to restart the container and when to leave it alone and remove it from the load-balancer so that an administrator 
 would  manually investigate the issue. 
 
-----
-$ oc set probe dc/catalog --readiness --initial-delay-seconds=30 --failure-threshold=3 --get-url=http://:8080/health 
-----
+```bash
+oc set probe dc/spring-boot-java --readiness --initial-delay-seconds=60 --failure-threshold=3 --get-url=http://:8080/health
+```
 
-Voilà! OpenShift automatically restarts the Catalog pod and as soon as the 
-health probes succeed, it is ready to receive traffic. 
+Voilà! OpenShift automatically restarts the basic-spring-boot pod and as soon as the health probes succeed, it is ready to receive traffic. 
 
-
-###  Monitoring Web UI Health
-
-Although you can add the liveness and health probes to the Web UI using a single CLI command, let's 
-give the OpenShift Web Console a try this time.
-
-`*Go to {{OPENSHIFT_CONSOLE_URL}}[OpenShift Web Console^]*` in your browser and in the **{{COOLSTORE_PROJECT}}** project. 
-`*Click on 'Applications > Deployments'*` on the left-side bar. `*Click on 'web > Configuration tab'*`.
-You will see the warning about health checks, with a link to
-click in order to add them. `*Click on 'Add health checks'*` now. 
-
-TIP: Instead of **Configuration** tab, you can directly click on **Actions** button on the top-right 
-and then **Edit Health Checks**
-
-image:{% image_path health-web-details.png %}[Health Probes,900]
-
-You will want to `*click on both 'Add Readiness Probe' and 'Add Liveness Probe'*` and
-then fill them out as follows:
-
-Readiness Probe::
-* Path: **/**
-* Initial Delay: **10**
-* Timeout: **1**
-
-Liveness Probe::
-* Path: **/**
-* Initial Delay: **180**
-* Timeout: **1**
-
-image:{% image_path health-readiness.png %}[Readiness Probe,700]
-
-image:{% image_path health-liveness.png %}[Readiness Probe,700]
-
-`*Click on 'Save'*` and then `*click the 'Overview' button*` in the left navigation. You
-will notice that Web UI pod is getting restarted and it stays light blue
-for a while. This is a sign that the pod(s) have not yet passed their readiness
-checks and it turns blue when it's ready!
-
-image:{% image_path health-web-redeploy.png %}[Web Redeploy,740]
 
 ### Monitoring Metrics
 
