@@ -36,6 +36,24 @@ http://example-basic-userXY.apps.$CLUSTER_ID.openshiftworkshop.com/example
 
 where `XY` is your user's number and `$CLUSTER_ID` the name of the current OpenShift cluster.
 
+
+### Webhook Triggers
+
+Webhook triggers allow you to trigger a new build by sending a request to the OpenShift Container Platform API endpoint. You can define these triggers using GitHub, GitLab, Bitbucket, or Generic webhooks.
+
+OpenShift Container Platform webhooks currently only support their analogous versions of the push event for each of the Git based source code management systems (SCMs). All other event types are ignored.
+
+#### Add a simple Webhook
+
+1. In the OpenShift Web UI, navigate to `Builds - spring-boo-java - Configuration`
+2. Copy link `Generic Webhook URL`
+3. In Gogs, navigate to `basic-spring-boot - Settings - Webhooks`
+4. Click `Add Webhook` and then select `Gogs` as the type of Webhook
+5. Paste the previously copied `Generic Wbhook URL` into `Payload URL`
+6. Click `Add Webhook`
+
+Now anytime you push code to your repository, it will trigger a re-build and re-deploy in OpenShift.
+
 ## Next steps
 
 [Lab 6 - Monitoring Application Health ](lab6.md)
