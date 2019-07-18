@@ -103,7 +103,7 @@ on the node available than what the pod has requested. This is to allow various 
 tiers with regards to compute resources. You can read more about these quality of service tiers 
 in [OpenShift Documentation](https://docs.openshift.com/container-platform/3.11/dev_guide/compute_resources.html#quality-of-service-tiers).
 
-Set the following resource constraints on the basic-spring-boot pod:
+Set the following resource constraints on the spring-boot-java pod:
 
 * Memory Request: 128 Mi
 * Memory Limit: 200 Mi
