@@ -67,7 +67,7 @@ Verify that the health endpoint works for **basic-spring-boot** using `*curl*`
 ```bash
 $ curl http://example-basic-userXY.apps.$CLUSTER_ID.openshiftworkshop.com/health
 
-{"status":"UP","diskSpace":{"status":"UP","total":53674487808,"free":27763781632,"threshold":10485760}}
+{"status":"UP"}
 ```
 
 ###  Monitoring Catalog Service Health
@@ -172,3 +172,5 @@ to see a more detailed view of the metrics charts.
 
 
 ## Next steps
+
+[Lab 7 - Configuration ](lab7.md)
