@@ -41,8 +41,9 @@ When promted by git, log in as `$OPENSHIFT_USER @ $OPENSHIFT_PASSWORD`
 ### Build and deploy the front-end
 
 1. Change `$API_ENDPOINT` in `my-thai-star-workshop/templates/build-mythaistar-angular.yaml`
-2. Upload `my-thai-star-workshop/templates/build-mythaistar-angular.yaml`
-3. Upload `my-thai-star-workshop/templates/deploy-mythaistar-angular.yaml`
+2. Change `uri:`, replace with `$GOGS_REPO_URL`
+3. Upload `my-thai-star-workshop/templates/build-mythaistar-angular.yaml`
+4. Upload `my-thai-star-workshop/templates/deploy-mythaistar-angular.yaml`
 
 ```bash
 cd /projects/my-thai-star-workshop
@@ -56,4 +57,4 @@ oc create -f templates/deploy-mythaistar-angular.yaml
 
 ## Next steps
 
-[Lab 5 - Monitoring Application Health ](health.md)
+[Lab 5 - Simple CI/CD ](lab5.md)
